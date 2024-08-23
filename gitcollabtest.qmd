@@ -23,7 +23,7 @@ crab_plot <- ggplot(pie_crab, aes(x = latitude, y = size)) +
 crab_plot
 ```
 
-```{r}
+```{r, echo=FALSE,warning=FALSE}
 #To your document, add an unfinalized summary table containing the mean, standard deviation, and sample size of fiddler crab carapace widths by site (tip: use round(mean(), 2) to round a value to 2 decimal places)
 
 pie_crab_sumtable <- pie_crab %>%
@@ -34,6 +34,8 @@ pie_crab_sumtable <- pie_crab %>%
          count = n()) %>%
   distinct(site,mean,std,count)
   
+pie_crab_sumtable <- pie_crab_sumtable %>% rename(mean_carapace_length_mm = mean, standard_deviation_length_mm = std)
 
+pie_crab_sumtable
 ```
 
