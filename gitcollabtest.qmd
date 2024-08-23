@@ -1,13 +1,22 @@
 ---
 title: "gitcollab"
 format: html
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
 library(lterdatasampler)
-pie_crab
+pie_crab <- pie_crab
 ```
 ```{r}
 #Hi, this is Naomi
+```
+
+```{r}
+library(tidyverse)
+# josephine's changes
+crab_plot <- ggplot(pie_crab, aes(x = latitude, y = size)) +
+  geom_point()
 ```
 
