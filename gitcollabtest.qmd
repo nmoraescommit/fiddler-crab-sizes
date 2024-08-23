@@ -1,0 +1,13 @@
+---
+title: "gitcollab"
+format: html
+---
+
+```{r}
+library(lterdatasampler)
+pie_crab
+```
+```{r}
+#Hi, this is Naomi
+```
+
