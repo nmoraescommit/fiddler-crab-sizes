@@ -3,20 +3,37 @@ title: "gitcollab"
 format: html
 editor_options: 
   chunk_output_type: console
+  echo: false
+  warning: FALSE
+
 ---
 
-```{r}
+```{r,include=FALSE,echo=FALSE,warning=FALSE}
 library(lterdatasampler)
 pie_crab <- pie_crab
 ```
-```{r}
-#Hi, this is Naomi
-```
 
-```{r}
+
+```{r,echo=FALSE,warning=FALSE,fig.cap="this is my caption",message=FALSE}
 library(tidyverse)
 # josephine's changes
 crab_plot <- ggplot(pie_crab, aes(x = latitude, y = size)) +
   geom_point()
+
+crab_plot
+```
+
+```{r}
+#To your document, add an unfinalized summary table containing the mean, standard deviation, and sample size of fiddler crab carapace widths by site (tip: use round(mean(), 2) to round a value to 2 decimal places)
+
+pie_crab_sumtable <- pie_crab %>%
+  select(site,size)  %>%
+  group_by(site) %>%
+  mutate(mean = round(mean(size), digits = 2),
+         std = round(sd(size),digits = 2),
+         count = n()) %>%
+  distinct(site,mean,std,count)
+  
+
 ```
 
